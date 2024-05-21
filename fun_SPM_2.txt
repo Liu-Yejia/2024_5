@@ -1,0 +1,8 @@
+fun_SPM_2<-function(StartP=1, EndP=1000, m=10, d=8){ # spm: Starting Points Making
+  # set.seed(0)
+  SPs<-rep(0, m)
+  while(any(dist(SPs)<d)){
+    SPs<-sample(StartP:EndP, m, replace=FALSE)
+  }
+  return(sort(SPs, decreasing = FALSE))
+}
